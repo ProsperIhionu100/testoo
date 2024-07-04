@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog3</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" href="output.css">
+
+</head>
+
+<body class=" box-border bg-whit">
+
+    <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative" id="alert" role="alert">
+        <strong class="font-bold">Holy smokes!</strong>
+        <span class="block sm:inline">Something seriously bad happened.</span>
+        <span class="absolute top-0 bottom-0 right-0 px-4 py-3" id="btn">
+          <svg class="fill-current h-6 w-6 text-blue-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+        </span>
+    </div>
+
+    <div class=" w-80 h-full bg-stone-200 text-black fixed top-0 left-0 z-50 hidden transition-all duration-75 ease-in-out translate-x-0 "  id="sidebar">
+        <ul class=" text-black text-xl">
+            <li class=" p-5  border-b border-gray-500"><a href="#">Style Guides</a></li>
+            <li class=" p-5 border-b border-gray-500"><a href="#">Features</a></li>
+            <li class="p-5 border-b border-gray-500"><a href="#">Membership</a></li>
+            <li class="p-5 border-b border-gray-500"><a href="#">Tags</a></li>
+            <li class="p-5 border-b border-gray-500"><a href="#">Sign In</i></a></li>
+        </ul>
+    </div>
+   <header class=" bg-the  sticky top-0  z-10 shadow-xl animate__animated animate__fadeInDown animate__delay-2s">
+        <div class=" md:p-10 py-8 pl-3 flex justify-between">
+            <div class="flex items-center">
+                <div>
+                    <img src="img/logo1.jpg" alt="" class=" w-36">
+                </div>
+                <div class="hidden lg:block">
+                    <ul class=" flex font-body  text-lg font-extrabold text-me">
+                        <li class=" ml-10"><a href="#">Style Guides</a></li>
+                        <li class=" ml-10"><a href="#">Features</a></li>
+                        <li class=" ml-10"><a href="#">Membership</a></li>
+                        <li class=" ml-10"><a href="#">Tags</a></li>
+                        <li class=" ml-8  "><a href="#"><i class='bx bx-dots-horizontal-rounded'></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="lg:self-center ">
+                    <i class='bx lg:text-2xl  text-4xl mr-5 bx-search-alt-2' id="search"></i>
+                    <i class='bx lg:text-2xl  text-4xl mr-5 bx-moon' ></i>
+                </div>
+                <div class="hidden lg:block">
+                    <button class=" bg-ball text-whit py-3 px-8 rounded-full font-medium">Sign In</button>
+                </div>
+                <span class="lg:hidden flex" id="hamburger">
+                    <i class='bx bx-menu text-5xl hidden' id="menu"></i>
+                </span>
+            </div>
+        </div>
+    </header> 
+
+
+    <div class="relative z-10 hidden" id="box" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!--
+          Background backdrop, show/hide based on modal state.
+      
+          Entering: "ease-out duration-300"
+            From: "opacity-0"
+            To: "opacity-100"
+          Leaving: "ease-in duration-200"
+            From: "opacity-100"
+            To: "opacity-0"
+        -->
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+      
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <!--
+              Modal panel, show/hide based on modal state.
+      
+              Entering: "ease-out duration-300"
+                From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                To: "opacity-100 translate-y-0 sm:scale-100"
+              Leaving: "ease-in duration-200"
+                From: "opacity-100 translate-y-0 sm:scale-100"
+                To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            -->
+            <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+              <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                <div class="flex items-center justify-center">
+                    <form action="">
+                        <input type="text" placeholder="&#128269;Search" class="bg-for py-4  lg:w-96 px-6 border border-stone-300 rounded-xl">
+                    </form>
+                </div>
+                  
+              </div>
+              <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                <button type="button" id="closebtn" class="mt-3 inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-whit shadow-sm ring-1 ring-inset  hover:bg-red-500 sm:mt-0 sm:w-auto">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <section class="bg-whit">
+        <div class="lg:p-24 p-4">
+            <h1 class="text-4xl  md:text-8xl font-body font-black text-me ">In depth <span></span><br> resource on UI, UX and everything <span></span> in <span></span> between.</h1>
+            <div class=" lg:grid lg:grid-cols-2 lg:gap-24">
+                <div>
+                    <p class=" font-body  mt-10 text-xl">Get the email newsletter and unlock access to members-only content and updates Elijah is a modern classic blog theme for Ghost.</p>
+                </div>
+                <div class="relative mt-12 w-34">
+                    <input class=" flex p-6  pr-20  border-solid w-wa border-you border-y-2 border-l-2 rounded-full" data-members-email="" placeholder="Email Address" type="email">
+                    <button class="bg-me absolute right-0 h-ha top-0 text-whit px-10 py-6 text-xl rounded-full" type="submit">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-whit p-4">
+        <div class="grid md:grid-cols-3 gap-10 lg:p-10">
+            <div class="rounded-3xl overflow-hidden shadow-md w-wa relative">
+                 <!-- <img src="img/Elijah2.jpg" alt="" class=" h-72 object-cover w-full bg-gradient-to-b from-transparent via-opacity-65 to-opacity-85 "> -->
+                <div class="bg-gradient-to-t  from-black  to-slate-400">
+                    <img src="img/Elijah2.jpg" alt="" class="h-80 object-cover w-full mix-blend-overlay">
+                </div>
+                <div class="ml-6 absolute top-32"> 
+                    <div class=" text-we mt-2 mb-4">
+                        <span class=" text-xs mt-12  bg-ball p-2 px-2 rounded text-whit font-black font-body">Lifestyle</span>
+                        <span class=" text-xs mt-12 ml-2 bg-ball p-2 px-2 rounded text-whit font-black font-body">Idea</span>
+                        <span class=" text-xs mt-12 ml-2 bg-ball p-2 px-2 rounded text-whit font-black font-body">Story</span>
+                    </div>
+                    <h3 class=" font-body font-black text-2xl text-whit ">
+                        <a href="#">
+                            5 Easy Ways You Can Turn Future Into Success&#8230;
+                        </a>
+                    </h3>
+                    <div class="flex">
+                        <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-5.jpg" class="overflow-hidden" alt=""></div>  
+                        <span class=" text-4xl self-center ml-2 text-ma">&#8213;</span>  
+                        <span class="text-lg self-center ml-2 text-body  text-ma">4 min read</span>
+                    </div>
+                </div>  
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-md w-wa relative">
+                 <!-- <img src="img/Elijah2.jpg" alt="" class=" h-72 object-cover w-full bg-gradient-to-b from-transparent via-opacity-65 to-opacity-85 "> -->
+                <div class="bg-gradient-to-t  from-black  to-slate-400">
+                    <img src="img/Elijah3.jpg" alt="" class="h-80 object-cover w-full mix-blend-overlay">
+                  </div>
+                <div class="ml-6 absolute top-32"> 
+                    <div class=" text-we mt-2 mb-4">
+                        <span class=" text-xs mt-12  bg-ball p-2 px-2 rounded text-whit font-black font-body"><i class='bx bxs-lock-alt' ></i></span>
+                        <span class=" text-xs mt-12 ml-2 bg-ball p-2 px-2 rounded text-whit font-black font-body">Fashion</span>
+                        <span class=" text-xs mt-12 ml-2 bg-ball p-2 px-2 rounded text-whit font-black font-body">Creative</span>
+                    </div>
+                    <h3 class=" font-body font-black text-2xl text-whit ">
+                        <a href="#">
+                            Want To Have A More Appealing Tattoo&#8230;
+                        </a>
+                    </h3>
+                    <div class="flex">
+                        <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-4.jpg" class="overflow-hidden" alt=""></div>  
+                        <span class=" text-4xl self-center ml-2 text-ma">&#8213;</span>  
+                        <span class="text-lg self-center ml-2 text-body  text-ma">1 min read</span>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-md w-wa relative">
+                 <!-- <img src="img/Elijah2.jpg" alt="" class=" h-72 object-cover w-full bg-gradient-to-b from-transparent via-opacity-65 to-opacity-85 "> -->
+                <div class="bg-gradient-to-t  from-black  to-slate-400">
+                    <img src="img/Elijah4.jpg" alt="" class="h-80 object-cover w-full mix-blend-overlay">
+                  </div>
+                <div class="ml-6 absolute top-32"> 
+                    <div class=" text-we mt-2 mb-4">
+                        <span class=" text-xs mt-12  bg-ball p-2 px-2 rounded text-whit font-black font-body">Idea</span>
+                        <span class=" text-xs mt-12 ml-2 bg-ball p-2 px-2 rounded text-whit font-black font-body">Review</span>
+                        <span class=" text-xs mt-12 ml-2 bg-ball p-2 px-2 rounded text-whit font-black font-body">Design</span>
+                    </div>
+                    <h3 class=" font-body font-black text-2xl text-whit ">
+                        <a href="#">
+                            Brand is just a <br>  perception and will&#8230;
+                        </a>
+                    </h3>
+                    <div class="flex">
+                        <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-6.jpg" class="overflow-hidden" alt=""></div>  
+                        <span class=" text-4xl self-center ml-2 text-ma">&#8213;</span>  
+                        <span class="text-lg self-center ml-2 text-body  text-ma">3 min read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class=" p-4 lg:grid lg:grid-cols-7 md:grid-cols-2 lg:gap-5 bg-the py-20">
+        <div class=" bg-whit flex flex-col font-body font-extrabold p-4 items-center  justify-center rounded-xl">
+            <i class='bx text-2xl text-ball bx-purchase-tag'></i>
+            <h3 class="text-lg">Popular Tags</h3>
+        </div>
+        <div class="bg-whit lg:mt-0  mt-8 px-5 py-2 flex items-center lg:py-5 justify-between col-start-2 col-end-4 rounded-xl">
+            <div class="flex items-center justify-between  gap-2">
+                <div class=""><img class="rounded-full h-16" src="img/tag_6.jpg" alt=""></div>
+                <div class="">
+                    <h1 class="text-xl font-body font-extrabold">Idea</h1>
+                    <p>13 posts</p>
+                </div>
+            </div>
+            <div class=" bg-the p-3 rounded-full">
+                <i class='bx text-3xl bx-right-arrow-alt'></i>
+            </div>
+        </div>
+        <div class="bg-whit lg:mt-0 mt-8 px-5 py-2 flex items-center lg:py-5 justify-between col-start-4 col-end-6  rounded-xl">
+            <div class="flex items-center justify-between  gap-2">
+                <div class=""><img class="rounded-full h-16" src="img/tag_3.jpg" alt=""></div>
+                <div class="">
+                    <h1 class="text-xl font-body font-extrabold">Business</h1>
+                    <p>10 posts</p>
+                </div>
+            </div>
+            <div class=" bg-the p-3 rounded-full">
+                <i class='bx text-3xl bx-right-arrow-alt'></i>
+            </div>
+        </div>
+        <div class="bg-whit lg:mt-0 mt-8 px-5 py-2 flex items-center lg:py-5 justify-between col-start-6 col-end-8  rounded-xl">
+            <div class="flex items-center justify-between  gap-2">
+                <div class=""><img class="rounded-full h-16" src="img/tag_9.jpg" alt=""></div>
+                <div class="">
+                    <h1 class="text-xl font-body font-extrabold">Story</h1>
+                    <p>10 posts</p>
+                </div>
+            </div>
+            <div class=" bg-the p-3 rounded-full">
+                <i class='bx text-3xl bx-right-arrow-alt'></i>
+            </div>
+        </div>
+        <div class="bg-whit lg:mt-0 mt-8 px-5 py-2 flex items-center lg:py-5 justify-between col-start-1 col-end-3 rounded-xl">
+            <div class="flex items-center justify-between  gap-2">
+                <div class=""><img class="rounded-full h-16" src="img/tag_1.jpg" alt=""></div>
+                <div class="">
+                    <h1 class="text-xl font-body font-extrabold">News</h1>
+                    <p>9 posts</p>
+                </div>
+            </div>
+            <div class=" bg-the p-3 rounded-full">
+                <i class='bx text-3xl bx-right-arrow-alt'></i>
+            </div>
+        </div>
+        <div class="bg-whit lg:mt-0 mt-8 px-5 py-2 flex items-center lg:py-5 justify-between col-start-3 col-end-5 rounded-xl">
+            <div class="flex items-center justify-between  gap-2">
+                <div class=""><img class="rounded-full h-16" src="img/tag_7.jpg" alt=""></div>
+                <div class="">
+                    <h1 class="text-xl font-body font-extrabold">Lifestyle</h1>
+                    <p>9 posts</p>
+                </div>
+            </div>
+            <div class=" bg-the p-3 rounded-full">
+                <i class='bx text-3xl bx-right-arrow-alt'></i>
+            </div>
+        </div>
+        <div class="bg-whit lg:mt-0 mt-8 px-5 py-2 flex items-center lg:py-5 justify-between col-start-5 col-end-7 rounded-xl">
+            <div class="flex items-center justify-between  gap-2">
+                <div class=""><img class="rounded-full h-16" src="img/tag_5.jpg" alt=""></div>
+                <div class="">
+                    <h1 class="text-xl font-body font-extrabold">Fashion</h1>
+                    <p>6 posts</p>
+                </div>
+            </div>
+            <div class=" bg-the p-3 rounded-full">
+                <i class='bx text-3xl bx-right-arrow-alt'></i>
+            </div>
+        </div>
+        <div class=" bg-whit lg:mt-0 mt-8 flex flex-col font-body font-extrabold p-4 items-center  justify-center rounded-xl">
+            <i class='bx text-2xl text-ball bx-upvote'></i>
+            <h3 class="text-xl">View all</h3>
+        </div>
+    </section>
+    <section class="grid lg:grid-cols-3 md:grid-cols-2 gap-8  items-start pt-20 pb-10 bg-gradient-to-b from-whit to-the px-1 ">
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl">
+            <div>
+                <img src="img/photo-1.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Business</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Story</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        The trick to getting more done is to have the freedom to roam
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Nullam vel lectus vel velit pellentesque dignissim nec id magna. Cras molestie ornare quam at semper. Proin a ipsum ex&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit shadow-2xl"><img src="img/author-4.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">4 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl">
+            <div>
+                <img src="img/photo-2.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Business</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        Day He Won't Soon Forget Denny Backup At Ready to Use
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec volutpat rhoncus&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-5.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">3 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl">
+            <div>
+                <img src="img/photo-3.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Story</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Review</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        Apple Watch Series 9 Reportedly Has Flat Sides and Bigger
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Integer nec mi cursus, blandit est et, auctor mauris. Aenean ex metus, faucibus in mattis at, tincidunt eu dolor. Cras&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-3.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">2 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl">
+            <div>
+                <img src="img/photo-4.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Fashion</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        Boxed Water Partners With To Consumer Creativity
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Morbi a facilisis lectus. Ut eu dapibus risus, a interdum justo. Vestibulum volutpat velit ac tellus mollis, sit amet&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-5.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">4 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl">
+            <div>
+                <img src="img/photo-5.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">News</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Story</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Lifestyle</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        Will The Democrats Be Able To Online Gambling Ban Done!
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Nullam auctor nisi non tortor porta, id dapibus lectus rhoncus. Vivamus lobortis posuere enim finibus sodales. Phasellus&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-7.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">4 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl">
+            <div>
+                <img src="img/photo-6.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Lifestyle</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">News</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        Using Sports Ahead Competition on The Best Coworking Space
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Vestibulum vehicula dui venenatis neque tempor, accumsan iaculis sapien ornare. Sed at ante porta, ullamcorper massa eu&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-5.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">4 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl">
+            <div>
+                <img src="img/photo-7.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body"><i class='bx bxs-lock-alt' ></i></span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">News</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Story</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        Fashion Trends and Li EdelKoort The Culture Shock Special Report
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Quae in controversiam veniunt, de iis, si placet, disseramus. Iam quae corporis sunt, ea nec auctoritatem cum animi&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-5.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">4 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl">
+            <div>
+                <img src="img/photo-8.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Business</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        VR Use of Computer Technology Simulated at Environment.
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Curabitur elementum nulla sapien, vel suscipit turpis convallis quis. Morbi sagittis non quam at aliquet. Suspendiss&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-5.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">4 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl">
+            <div>
+                <img src="img/photo-9.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Story</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Review</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        My Childhood was full of wonderful <br> memories which never share
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Quibus autem in rebus tanta obscuratio non fit, fieri tamen potest, ut id ipsum, quod interest, non sit magnum. Ita fit ut,&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-5.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">4 min read</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class=" flex bg-the pb-20 justify-center">
+        <div class=" bg-ball text-whit p-3 text-lg font-bold px-20 rounded-full">
+            Load More
+        </div>
+    </div>
+    <section class="bg-whit">
+        <div class="bg-gradient-to-t from-whit to-the font-body flex justify-center mb-2">
+            <h3 class="text-4xl font-extrabold">In case you missed it!</h3>
+        </div>
+        <div class="flex justify-center bg-whit">
+            <hr class=" border-ball  border-2 w-20 my-3 ">
+        </div>
+        <div class="grid  gap-7 lg:grid-cols-6 grid-cols-2 md:grid-cols-3 p-2 lg:px-10 pt-7">
+            <div class="rounded-3xl overflow-hidden shadow-md w-wa relative">
+                 <!-- <img src="img/Elijah2.jpg" alt="" class=" h-72 object-cover w-full bg-gradient-to-b from-transparent via-opacity-65 to-opacity-85 "> -->
+                <div class="bg-gradient-to-t  from-black  to-slate-400">
+                    <img src="img/photo-1.jpg" alt="" class="h-40   object-cover w-full mix-blend-overlay">
+                </div>
+                <div class="ml-6 absolute top-3"> 
+                    <div class=" text-we mt-3">
+                        <span class=" text-xs mt-12  bg-ball p-2 px-2 rounded text-whit font-black font-body">Idea</span>
+                    </div>
+                    <h3 class=" font-body font-black text-xl leading-6 mt-6 text-whit ">
+                        <a href="#">
+                            The trick is getting more done is to&#8230;
+                        </a>
+                    </h3>
+                </div>  
+            </div>
+            
+            <div class="rounded-3xl overflow-hidden shadow-md w-wa relative">
+                 <!-- <img src="img/Elijah2.jpg" alt="" class=" h-72 object-cover w-full bg-gradient-to-b from-transparent via-opacity-65 to-opacity-85 "> -->
+                <div class="bg-gradient-to-t  from-black  to-slate-400">
+                    <img src="img/photo-3.jpg" alt="" class="h-40   object-cover w-full mix-blend-overlay">
+                </div>
+                <div class="ml-6 absolute top-3"> 
+                    <div class=" text-we mt-3">
+                        <span class=" text-xs mt-12  bg-ball p-2 px-2 rounded text-whit font-black font-body">Story</span>
+                    </div>
+                    <h3 class=" font-body font-black text-xl leading-6 mt-6 text-whit ">
+                        <a href="#">
+                            Apple <br> Watch <br>Series 9&#8230;
+                        </a>
+                    </h3>
+                </div>  
+            </div>
+            
+            <div class="rounded-3xl overflow-hidden shadow-md w-wa relative">
+                 <!-- <img src="img/Elijah2.jpg" alt="" class=" h-72 object-cover w-full bg-gradient-to-b from-transparent via-opacity-65 to-opacity-85 "> -->
+                <div class="bg-gradient-to-t  from-black  to-slate-400">
+                    <img src="img/photo-5.jpg" alt="" class="h-40   object-cover w-full mix-blend-overlay">
+                </div>
+                <div class="ml-6 absolute top-3"> 
+                    <div class=" text-we mt-3">
+                        <span class=" text-xs mt-12  bg-ball p-2 px-2 rounded text-whit font-black font-body">News</span>
+                    </div>
+                    <h3 class=" font-body font-black text-xl leading-6 mt-6 text-whit ">
+                        <a href="#">
+                            Will The Democrats <br> Be Able To&#8230;
+                        </a>
+                    </h3>
+                </div>  
+            </div>
+            
+            <div class="rounded-3xl overflow-hidden shadow-md w-wa relative">
+                 <!-- <img src="img/Elijah2.jpg" alt="" class=" h-72 object-cover w-full bg-gradient-to-b from-transparent via-opacity-65 to-opacity-85 "> -->
+                <div class="bg-gradient-to-t  from-black  to-slate-400">
+                    <img src="img/photo-7.jpg" alt="" class="h-40   object-cover w-full mix-blend-overlay">
+                </div>
+                <div class="ml-6 absolute top-3"> 
+                    <div class=" text-we mt-3">
+                        <span class=" text-xs mt-12  bg-ball p-2 px-2 rounded text-whit font-black font-body">Idea</span>
+                    </div>
+                    <h3 class=" font-body font-black text-xl leading-6 mt-6 text-whit ">
+                        <a href="#">
+                            Fasion <br>Trends and <br> Li EdelKoor&#8230;
+                        </a>
+                    </h3>
+                </div>  
+            </div>
+            
+            <div class="rounded-3xl overflow-hidden shadow-md w-wa relative">
+                 <!-- <img src="img/Elijah2.jpg" alt="" class=" h-72 object-cover w-full bg-gradient-to-b from-transparent via-opacity-65 to-opacity-85 "> -->
+                <div class="bg-gradient-to-t  from-black  to-slate-400">
+                    <img src="img/photo-10.jpg" alt="" class="h-40   object-cover w-full mix-blend-overlay">
+                </div>
+                <div class="ml-6 absolute top-3"> 
+                    <div class=" text-we mt-3">
+                        <span class=" text-xs mt-12  bg-ball p-2 px-2 rounded text-whit font-black font-body">Lifestyle</span>
+                    </div>
+                    <h3 class=" font-body font-black text-xl leading-6 mt-6 text-whit ">
+                        <a href="#">
+                            I have my <br> own <br> definition o&#8230;
+                        </a>
+                    </h3>
+                </div>  
+            </div>
+            
+            <div class="rounded-3xl overflow-hidden shadow-md w-wa relative">
+                 <!-- <img src="img/Elijah2.jpg" alt="" class=" h-72 object-cover w-full bg-gradient-to-b from-transparent via-opacity-65 to-opacity-85 "> -->
+                <div class="bg-gradient-to-t  from-black  to-slate-400">
+                    <img src="img/photo-11.jpg" alt="" class="h-40   object-cover w-full mix-blend-overlay">
+                </div>
+                <div class="ml-6 absolute top-3"> 
+                    <div class=" text-we mt-3">
+                        <span class=" text-xs mt-12  bg-ball p-2 px-2 rounded text-whit font-black font-body">News</span>
+                    </div>
+                    <h3 class=" font-body font-black text-xl leading-6 mt-6 text-whit ">
+                        <a href="#">
+                            300 Free <br> Tools & <br> Services fo&#8230;
+                        </a>
+                    </h3>
+                </div>  
+            </div>
+        </div>
+    </section>
+    <section class=" flex  lg:flex-row lg:justify-between  items-center flex-col py-20 px-2 bg-whit">
+        <div>
+            <img src="img/logo1.jpg" class="h-10" alt="">
+        </div>
+        <div class="flex lg:mt-0 mt-6">
+            <div class=" bg-ball text-whit flex items-center font-body px-12 py-3 rounded-3xl font-bold">
+                <h3>Contact us<i class='bx bx-right-arrow-alt'></i></h3>
+            </div>
+        </div>
+    </section>
+    <div class="bg-whit p-6">
+        <hr class="   bg-the border-solid border-t border-stone-300">
+    </div>
+    <footer class="bg-whit">
+        <div class="pt-14 grid md:grid-cols-2 font-body pb-10">
+            <div class="grid md:grid-cols-2">
+                <div class="lg:mt-0 mt-14">
+                    <h3 class="m-3 mb-8 text-2xl font-extrabold">Quick Links</h3>
+                    <ul class="ml-3  flex flex-col gap-3  font-body font-semibold text-xl">
+                        <li class="">Archive page</li>
+                        <li>Contact page</li>
+                        <li>Signin page</li>
+                        <li>Signup page</li>
+                        <li>Free Account page</li>
+                        <li>Paid Account page</li>
+                    </ul>
+                </div>
+                <div class="lg:mt-0 mt-14">
+                    <h3 class="m-3 mb-8 text-2xl font-extrabold">Tags</h3>
+                    <ul class="ml-3  flex flex-col gap-4  font-body font-semibold  text-xl">
+                        <li>Idea</li>
+                        <li>Business</li>
+                        <li>Story</li>
+                        <li>News</li>
+                        <li>Lifestyle</li>
+                        <li>Fashion</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m-3 mt-14 lg:mt-0">
+                <h1 class=" text-4xl  lg:mt-3 font-body font-extrabold">Join the newsletter and read the new post first.</h1>
+                <div class="">
+                    <div>
+                        <p class=" font-body  mt-3 text-xl">Get the email newsletter and unlock access to members-only content</p>
+                    </div>
+                    <div class="relative mt-3 w-34">
+                        <input class=" flex p-4  pr-20  border-solid w-wa border-you border-y-2 border-l-2 rounded-full" data-members-email="" placeholder="Email Address" type="email">
+                        <button class=" absolute right-0 h-ha top-0 text-whit px-10 py-4 text-xl  bg-ball rounded-full" type="submit">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-whit p-2 py-8">
+            <hr class="   bg-whit border-solid border-t border-stone-300">
+        </div>
+        <div>
+            <p class="p-2"><a href="https://elijah.softhopper.studio">Elijah Demo</a> © 2024. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

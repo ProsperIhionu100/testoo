@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag_page</title>
+    <link rel="stylesheet" href="output.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class=" w-80 h-full bg-stone-200 text-black fixed top-0 left-0 z-50 hidden transition-all duration-75 ease-in-out translate-x-0"  id="sidebar">
+        <ul class=" text-black text-xl">
+            <li class=" p-5  border-b border-gray-500"><a href="#">Style Guides</a></li>
+            <li class=" p-5 border-b border-gray-500"><a href="#">Features</a></li>
+            <li class="p-5 border-b border-gray-500"><a href="#">Membership</a></li>
+            <li class="p-5 border-b border-gray-500"><a href="#">Tags</a></li>
+            <li class="p-5 border-b border-gray-500"><a href="#">Sign In</i></a></li>
+        </ul>
+    </div>
+   <header class=" bg-the  sticky top-0  z-10 shadow-xl">
+        <div class=" md:p-10 py-8 pl-3 flex justify-between">
+            <div class="flex items-center">
+                <div>
+                    <img src="img/logo1.jpg" alt="" class=" w-36">
+                </div>
+                <div class="hidden lg:block">
+                    <ul class=" flex font-body  text-lg font-extrabold text-me">
+                        <li class=" ml-10"><a href="#">Style Guides</a></li>
+                        <li class=" ml-10"><a href="#">Features</a></li>
+                        <li class=" ml-10"><a href="#">Membership</a></li>
+                        <li class=" ml-10"><a href="#">Tags</a></li>
+                        <li class=" ml-8  "><a href="#"><i class='bx bx-dots-horizontal-rounded'></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="lg:self-center ">
+                    <i class='bx lg:text-2xl  text-4xl mr-5 bx-search-alt-2' id="search"></i>
+                    <i class='bx lg:text-2xl  text-4xl mr-5 bx-moon' ></i>
+                </div>
+                <div class="hidden lg:block">
+                    <button class=" bg-ball text-whit py-3 px-8 rounded-full font-medium">Sign In</button>
+                </div>
+                <span class="lg:hidden flex" id="hamburger">
+                    <i class='bx bx-menu text-5xl hidden' id="menu"></i>
+                </span>
+            </div>
+        </div>
+    </header> 
+
+
+    <div class="relative z-10 hidden" id="box" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!--
+          Background backdrop, show/hide based on modal state.
+      
+          Entering: "ease-out duration-300"
+            From: "opacity-0"
+            To: "opacity-100"
+          Leaving: "ease-in duration-200"
+            From: "opacity-100"
+            To: "opacity-0"
+        -->
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+      
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <!--
+              Modal panel, show/hide based on modal state.
+      
+              Entering: "ease-out duration-300"
+                From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                To: "opacity-100 translate-y-0 sm:scale-100"
+              Leaving: "ease-in duration-200"
+                From: "opacity-100 translate-y-0 sm:scale-100"
+                To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            -->
+            <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+              <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                <div class="flex items-center justify-center">
+                    <form action="">
+                        <input type="text" placeholder="&#128269;Search" class="bg-for py-4  lg:w-96 px-6 border border-stone-300 rounded-xl">
+                    </form>
+                </div>
+                  
+              </div>
+              <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                <button type="button" id="closebtn" class="mt-3 inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-whit shadow-sm ring-1 ring-inset  hover:bg-red-500 sm:mt-0 sm:w-auto">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <section class="bg-whit pt-24">
+        <div class="flex justify-center">
+            <div class="mb-8">
+                <img src="img/tag_62.jpg" class=" w-56 h-52 rounded-3xl" alt="">
+            </div>
+        </div>
+        <div class=" font-body font-bold pb-3 ">
+            <h1 class=" text-6xl text-center flex items-center justify-center">Idea <span class="text-lg text-tr font-normal ml-3">( 13 posts )</span></h1>
+        </div>
+        <div>
+            <p class=" text-center text-xl lg:leading-8 ">Aenean eget urna aliquet, viverra orci quis, aliquam erat. Ut rutrum quam quam,<br> eu eleifend est blandit et. Vivamus suscipit ultrices venenatis. Aliquam massa <br> ipsum, porta quis hendrerit at, varius sed leo. Curabitur convallis urna sit amet mi <br> tempus posuere.
+        </div>
+    </section>
+    <section class="grid lg:grid-cols-3 gap-6  items-start  pt-20 pb-10 bg-gradient-to-b from-whit to-the lg:px-14 ">
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl self-start">
+            <div>
+                <img src="img/photo-1.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Business</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Story</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        The trick to getting more done is to <br> have the freedom <br> to roam
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Nullam vel lectus vel velit <br> pellentesque dignissim nec id <br> magna. Cras molestie ornare quam &#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit shadow-2xl"><img src="img/author-4.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">4 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl self-start">
+            <div>
+                <img src="img/photo-2.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Business</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        Day He Won't Soon Forget Denny Backup At Ready <br> to Use
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec volutpat rhoncus&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-5.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">3 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl self-end ">
+            <div>
+                <img src="img/photo-3.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Story</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Review</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        Apple Watch <br> Series 9 <br> Reportedly Has <br> Flat Sides and <br> Bigger
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Integer nec mi cursus, blandit est et, auctor mauris. Aenean ex metus, faucibus in mattis at, tincidunt eu dolor. Cras&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-3.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">2 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl self-start">
+            <div>
+                <img src="img/photo-4.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Fashion</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        Boxed Water <br> Partners With To <br> Consumer <br> Creativity
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Morbi a facilisis lectus. Ut eu dapibus risus, a interdum justo. Vestibulum volutpat velit ac tellus mollis, sit amet&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-5.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">4 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl self-start">
+            <div>
+                <img src="img/photo-7.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body"><i class='bx bxs-lock-alt' ></i></span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">News</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Story</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        Fashion Trends and Li EdelKoort The Culture Shock Special Report
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Quae in controversiam veniunt, de iis, si placet, disseramus. Iam quae corporis sunt, ea nec auctoritatem cum animi&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-5.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">4 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl self-end">
+            <div>
+                <img src="img/photo-8.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Business</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        VR Use of  <br> Computer <br> Technology <br> Simulated at <br> Environment.
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Curabitur elementum nulla sapien, vel suscipit turpis convallis quis. Morbi sagittis non quam at aliquet. Suspendiss&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-5.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">4 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl">
+            <div>
+                <img src="img/photo-12.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Lifestyle</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Design</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        I have my own <br> definition of <br> minimalism!
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Quasi vero aut concedatur in omnibus stultis aeque magna esse vitia, et eadem inbecillitate et&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-7.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">4 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl">
+            <div>
+                <img src="img/photo-13.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Fashion</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">News</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        Change your look and attitude
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Vestibulum vehicula dui venenatis neque tempor, accumsan iaculis sapien ornare. Sed at ante porta, ullamcorper massa eu&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-5.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">4 min read</span>
+                </div>
+            </div>
+        </div>
+        <div class=" m-3 bg-white rounded-3xl overflow-hidden shadow-xl">
+            <div>
+                <img src="img/photo-14.jpg" class="h-80 w-full object-cover" alt="">
+            </div>
+            <div class="m-5"> 
+                <div class=" text-we mt-8 mb-4">
+                    <span class=" text-xs mt-12  text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Lifestyle</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Idea</span>
+                    <span class=" text-xs mt-12 ml-2 text-ball p-2 px-4 rounded bg-the font-extrabold font-body">Story</span>
+                </div>
+                <h3 class=" font-body font-extrabold text-3xl mt-5 text-black ">
+                    <a href="#">
+                        5 Easy Way You Can Turn Future Into Success                 
+                    </a>
+                </h3>
+                <p class="font-body mt-2">
+                    Quibus autem in rebus tanta obscuratio non fit, fieri tamen potest, ut id ipsum, quod interest, non sit magnum. Ita fit ut,&#8230;
+                </p>
+                <div class="flex mt-4">
+                    <div class="border-2 rounded-3xl overflow-hidden  text-whit"><img src="img/author-5.jpg" class="overflow-hidden" alt=""></div>  
+                    <span class=" text-2xl self-center ml-2 text-black">&#8213;</span>  
+                    <span class="text-sm self-center ml-2 text-body  text-black">4 min read</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class=" flex bg-the pb-12 justify-center">
+        <div class=" bg-ball text-whit p-3 text-lg font-bold px-20 rounded-full">
+            Load More
+        </div>
+    </div>
+    <section class=" flex  lg:flex-row lg:justify-between  items-center flex-col py-12 px-2 bg-gradient-to-t from-whit to-the">
+        <div>
+            <img src="img/logo1.jpg" class="h-10" alt="">
+        </div>
+        <div class="flex lg:mt-0 mt-6">
+            <div class=" bg-ball text-whit flex items-center font-body px-12 py-3 rounded-3xl font-bold">
+                <h3>Contact us<i class='bx bx-right-arrow-alt'></i></h3>
+            </div>
+        </div>
+    </section>
+    <div class="bg-whit p-6">
+        <hr class="   bg-whit border-solid border-t border-stone-300">
+    </div>
+    <footer class="bg-whit">
+        <div class="pt-14 grid lg:grid-cols-2 font-body pb-10">
+            <div class="grid lg:grid-cols-2">
+                <div class="lg:mt-0 mt-14">
+                    <h3 class="m-3 mb-8 text-2xl font-extrabold">Quick Links</h3>
+                    <ul class="ml-3  flex flex-col gap-3  font-body font-semibold text-xl">
+                        <li class="">Archive page</li>
+                        <li>Contact page</li>
+                        <li>Signin page</li>
+                        <li>Signup page</li>
+                        <li>Free Account page</li>
+                        <li>Paid Account page</li>
+                    </ul>
+                </div>
+                <div class="lg:mt-0 mt-14">
+                    <h3 class="m-3 mb-8 text-2xl font-extrabold">Tags</h3>
+                    <ul class="ml-3  flex flex-col gap-4  font-body font-semibold  text-xl">
+                        <li>Idea</li>
+                        <li>Business</li>
+                        <li>Story</li>
+                        <li>News</li>
+                        <li>Lifestyle</li>
+                        <li>Fashion</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m-3 mt-14 lg:mt-0">
+                <h1 class=" text-4xl  lg:mt-3 font-body font-extrabold">Join the newsletter and read the new post first.</h1>
+                <div class="">
+                    <div>
+                        <p class=" font-body  mt-3 text-xl">Get the email newsletter and unlock access to members-only content</p>
+                    </div>
+                    <div class="relative mt-3 w-34">
+                        <input class=" flex p-4  pr-20  border-solid w-wa border-you border-y-2 border-l-2 rounded-full" data-members-email="" placeholder="Email Address" type="email">
+                        <button class=" absolute right-0 h-ha top-0 text-whit px-10 py-4 text-xl  bg-ball rounded-full" type="submit">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-whit p-2 py-8">
+            <hr class="   bg-whit border-solid border-t border-stone-300">
+        </div>
+        <div>
+            <p class="p-2"><a href="https://elijah.softhopper.studio">Elijah Demo</a> © 2024. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
